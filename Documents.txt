@@ -1,0 +1,5 @@
+- Download git bash from Here  -> https://git-scm.com/downloads/win
+- Create folder on Desktop -> foodOnline (open folder and right click and open git bash)
+-create virtual env   -> python -m venv env
+-activate environment -> source env/Scripts/activate
+-now check packages installed  ->  pip freeze

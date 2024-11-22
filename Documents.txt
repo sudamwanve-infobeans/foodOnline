@@ -1,5 +1,10 @@
 - Download git bash from Here  -> https://git-scm.com/downloads/win
 - Create folder on Desktop -> foodOnline (open folder and right click and open git bash)
--create virtual env   -> python -m venv env
--activate environment -> source env/Scripts/activate
--now check packages installed  ->  pip freeze
+- create virtual env   -> python -m venv env
+- activate environment -> source env/Scripts/activate
+- snow check packages installed  ->  pip freeze
+- install django  -> pip install django
+- create project -> django-admin startproject foodOnline_main .
+
+- All important key and DB configuration keep in .env file it is not push on git hub so add in .gitignore
+- for this .env install pip install python-decouple and then in setting.py file add from decouple import config

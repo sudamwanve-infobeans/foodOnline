@@ -2,4 +2,4 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse('WELCOM tO DJNAGO PROJECT')
+    return render(request,'home.html')

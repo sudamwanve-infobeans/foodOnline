@@ -8,3 +8,6 @@
 
 - All important key and DB configuration keep in .env file it is not push on git hub so add in .gitignore
 - for this .env install pip install python-decouple and then in setting.py file add from decouple import config
+
+
+for image upload need to istall pip install pillow

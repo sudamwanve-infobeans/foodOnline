@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 class UserManager(BaseUserManager):
-    def create_user(self, first_name, last_name, username, email, password=None):
+    def create_user(self, first_name, last_name, username, email,phone_number=None, password=None):
         if not email:
             raise ValueError("User Must Have an Email Address")
         
@@ -13,20 +13,22 @@ class UserManager(BaseUserManager):
             email = self.normalize_email(email),
             first_name = first_name,
             last_name = last_name,
-            username = username
+            username = username,
+            phone_number = phone_number
         )
 
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, first_name, last_name, username, email, password=None):
+    def create_superuser(self, first_name, last_name, username, email,phone_number=None, password=None):
         user = self.create_user(
             email = self.normalize_email(email),
             first_name = first_name,
             last_name = last_name,
             username = username,
-            password = password
+            password = password,
+            phone_number = phone_number
         )
 
         user.is_admin = True
@@ -38,10 +40,10 @@ class UserManager(BaseUserManager):
         return user
 
 class User(AbstractBaseUser):
-    RESTAURANT = 1
+    VENDOR = 1
     CUSTOMER = 2
     ROLE_CHOICE = (
-        (RESTAURANT, 'RESTAURANT'),
+        (VENDOR, 'VENDOR'),
         (CUSTOMER, 'CUSTOMER')
     )
 
